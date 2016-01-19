@@ -1,0 +1,108 @@
+body {
+	background-color: rgb(0, 0, 0);
+}
+
+#wrapper {
+	width: 90%;
+	margin: 20px auto;
+	padding: 10px;
+	height: 500px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+}
+
+#menu {
+	width: 100%;
+	margin: 10px auto 0 auto;
+	padding-left: 0;
+	overflow: hidden;
+}
+
+#menu li {
+	float: left;
+	width: 50%;
+	list-style: none;
+	text-align: center;
+}
+
+#menu li a {
+	display: block;
+	padding: 8px 0;
+	text-decoration: none;
+	font-size: 1.3em;
+}
+
+#menu li:first-child a {
+	background-color: silver;
+	color: black;
+	border-radius: 10px 0 0 0;
+} 
+
+#menu li:last-child a {
+	background-color: black;
+	color: white;
+	border-radius: 0 10px 0 0;
+} 
+
+#menu li:last-child a:hover {
+	background-color: silver;
+	color: black;
+} 
+
+#menu li:first-child a:hover {
+	background-color: black;
+	color: white;
+} 
+
+#result {
+	width: 100%;
+	margin: 0 auto;
+	height: 400px;
+	background-color: rgb(30, 30, 90);
+	border-radius: 0 0 10px 10px;
+}
+
+.list {
+	height: 399px;
+	border-top: 1px solid white;
+}
+
+#list {
+	float: left;
+	width: 49.5%;
+	border-right: 4px solid silver;
+    color: white;
+    overflow: hidden;
+}
+
+#listhtml {
+	float: right;
+	width: 49.5%;
+	border-left: 4px solid black;
+	color: white;
+    overflow: auto;
+}
+
+form {
+	width: 90%;
+	padding: 5px;
+	margin: 10px auto auto auto;
+	background-color: rgb(30, 30, 90);
+	color: white;
+	overflow: auto;
+}
+
+form textarea {
+	width: 95%;
+    font-size: 1.2em;
+	background-color: inherit;
+	color: white;
+	height: 350px;
+	border: none;
+}
+
+.cont {
+    margin: 10px 5px 5px 5px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
