@@ -1,6 +1,6 @@
-var server = require('./server');
-var router = require('./router');
-var handlers = require('./handlers');
+var server = require('./js/server');
+var router = require('./js/router');
+var handlers = require('./js/handlers');
 var handle = {};
 handle['/getdata'] = handlers.createForm;
 handle['/'] = handlers.startPage;

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Create custom UL</title>
+<link rel="stylesheet" type="text/css" href="http://localhost:8008/maincss">
+<script type="text/javascript" src="http://localhost:8008/mainjs"></script>
+</head>
+<body>
+<div id="tips">
+	<div>
+		<p>1 Step =></p>
+		<p>Press Create List</p>
+	</div>
+	<div>
+		<p>2 Step =></p>
+		<p>Input list like shown</p>
+	</div>
+	<div>
+		<p>3 Step =>></p>
+		<p>Press Show List HTML</p>
+	</div>
+</div>
+<div id="wrapper">
+    <ul id="menu" class="menu">
+        <li><a class="lnk">Create List/Reset</a></li>
+        <li><a class="lnk">Show List HTML</a></li>
+    </ul>
+    <div id="result">
+        <div id="list" class="list">
+            <pre>
+            
+            
+        Fruits
+          Apples               \
+          Berries        *******\
+            Kliukva              \
+            Zemlianika           /
+        Vegitable        *******/
+          Kartoshka            /
+            </pre>
+        </div>
+        <div id="listhtml" class="list">
+            <pre>
+                <ul data-depth="-1"><li>Fruits<ul data-depth="0"><li>Apples</li><li>Berries<ul data-depth="1"><li>Kliukva</li><li>Zemlianika</li></ul></li></ul></li><li>Vegitable<ul data-depth="0"><li>Kartoshka</li></ul></li></ul>
+            </pre>
+            <pre>
+            &lt;ul&gt;
+                &lt;li&gt;Fruits
+                    &lt;ul&gt;
+                        &lt;li&gt;Apples&lt;/li&gt;
+                        &lt;li&gt;Berries
+                            &lt;ul&gt;
+                                &lt;li&gt;Kliukva&lt;/li&gt;
+                                &lt;li&gt;Zemlianika&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;Vegitable
+                    &lt;ul&gt;
+                        &lt;li&gt;Kartoshka&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+            </pre>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -2,11 +2,75 @@ body {
 	background-color: rgb(0, 0, 0);
 }
 
+#tips {
+	width: 90%;
+	height: 100px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+	margin: 10px auto;
+	padding: 10px;
+}
+
+#tips div {
+	width: 33.3%;
+	height: 100px;
+	background-color: #fff;
+	float: left;
+}
+
+#tips div p {
+	margin: 5px 0;
+	height: 90px;
+	background-color: silver;
+	color: white;
+}
+
+#tips div p:first-child {
+	width: 30%;
+	float: left;
+	padding-top: 20px;
+	height: 70px;
+	text-align: center;
+	font-size: 1.2em;
+	background-color: rgb(30, 30, 90);
+	color: silver;
+}
+
+#tips div:first-child + div p:last-child {
+	padding-top: 20px;
+	height: 70px;
+}
+
+#tips div p:last-child {
+	width: 70%;
+	float: right;
+	text-align: center;
+	color: black;
+}
+
+#tips div:first-child {
+	border-radius: 5px 0 0 5px;
+}
+
+#tips div:first-child p {
+	padding-top: 20px;
+	height: 70px;
+}
+
+#tips div:last-child {
+	border-radius: 0 5px 5px 0;
+}
+
+#tips div:last-child p {
+	padding-top: 20px;
+	height: 70px;
+}
+
 #wrapper {
 	width: 90%;
-	margin: 20px auto;
+	margin: 10px auto;
 	padding: 10px;
-	height: 500px;
+	height: 485px;
 	background-color: rgba(255, 255, 255, 0.2);
 	border-radius: 10px;
 }
@@ -36,34 +100,36 @@ body {
 	background-color: silver;
 	color: black;
 	border-radius: 10px 0 0 0;
-} 
+}
 
 #menu li:last-child a {
 	background-color: black;
 	color: white;
 	border-radius: 0 10px 0 0;
-} 
+}
 
 #menu li:last-child a:hover {
 	background-color: silver;
 	color: black;
-} 
+	cursor: pointer;
+}
 
 #menu li:first-child a:hover {
 	background-color: black;
 	color: white;
+	cursor: pointer;
 } 
 
 #result {
 	width: 100%;
 	margin: 0 auto;
-	height: 400px;
+	height: 435px;
 	background-color: rgb(30, 30, 90);
 	border-radius: 0 0 10px 10px;
 }
 
 .list {
-	height: 399px;
+	height: 435px;
 	border-top: 1px solid white;
 }
 
@@ -71,8 +137,9 @@ body {
 	float: left;
 	width: 49.5%;
 	border-right: 4px solid silver;
-    color: white;
-    overflow: hidden;
+	font-size: 1.5em;
+	color: white;
+	overflow: hidden;
 }
 
 #listhtml {
@@ -80,7 +147,7 @@ body {
 	width: 49.5%;
 	border-left: 4px solid black;
 	color: white;
-    overflow: auto;
+	overflow: auto;
 }
 
 form {
@@ -94,7 +161,7 @@ form {
 
 form textarea {
 	width: 95%;
-    font-size: 1.2em;
+	font-size: 1.2em;
 	background-color: inherit;
 	color: white;
 	height: 350px;
@@ -102,7 +169,16 @@ form textarea {
 }
 
 .cont {
-    margin: 10px 5px 5px 5px;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 0.2);
+	margin: 10px 5px 5px 5px;
+	padding: 5px;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+pre {
+	padding: 0;
+	margin: 0;
+}
+
+pre ul {
+	margin: 0;
 }
