@@ -124,24 +124,24 @@ Constructor ListConstructor makes 'UL' list.
             }
 		}
 		//this.members.pop(this.members.length - 1);
-		this.lst = lst;                           ==>>  <ul data-depth="-1">
-															<li>Fruits
-																<ul data-depth="0">
-																	<li>Apples</li>
-																	<li>Berries
-																		<ul data-depth="1">
-																			<li>Kliukva</li>
-																			<li>Zemlianika</li>
-																		</ul>
-																	</li>
-																</ul>
-															</li>
-															<li>Vegitable
-																<ul data-depth="0">
-																	<li>Kartoshka</li>
-																</ul>
-															</li>
-														</ul>
+		this.lst = lst;  ==>>   <ul data-depth="-1">
+                                    <li>Fruits
+                                        <ul data-depth="0">
+                                            <li>Apples</li>
+                                            <li>Berries
+                                                <ul data-depth="1">
+                                                    <li>Kliukva</li>
+                                                    <li>Zemlianika</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>Vegitable
+                                        <ul data-depth="0">
+                                            <li>Kartoshka</li>
+                                        </ul>
+                                    </li>
+                                </ul>
     };
 	
 ------------------- dont use now!!!---------------------------------
