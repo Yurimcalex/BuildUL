@@ -23,7 +23,7 @@ var sendJS = function(res) {
     });
 };
 var sendCSS = function(res) {
-    fs.readFile('./css/main.css', function(err, cont) {
+    fs.readFile('./css/styles.css', function(err, cont) {
         res.writeHead(200, {"Content-Type": "text/css; charset=utf-8"});
         res.write(cont);
         res.end();
