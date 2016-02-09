@@ -67,12 +67,12 @@ Constructor ListConstructor makes 'UL' list.
 
 	function ListConstructor(str) {
 		this.data = new DataString(str).prepareData();   <<== [ { nesting=0,  value="Fruits" },
-																{ nesting=1,  value="Apples" },
-																{ nesting=1,  value="Berries" },
-																{ nesting=2,  value="Kliukva" },
-																{ nesting=2,  value="Zemlianika" },	
-																{ nesting=0,  value="Vegitable" },	
-																{ nesting=1,  value="Kartoshka" } ]
+                                                                { nesting=1,  value="Apples" },
+                                                                { nesting=1,  value="Berries" },
+                                                                { nesting=2,  value="Kliukva" },
+                                                                { nesting=2,  value="Zemlianika" },	 
+                                                                { nesting=0,  value="Vegitable" },	
+                                                                { nesting=1,  value="Kartoshka" } ]
     }
 	
 	ListConstructor.prototype.makeMembers = function () {
@@ -84,46 +84,46 @@ Constructor ListConstructor makes 'UL' list.
 			memb[i] = new Member(el);
 		}
 		this.members = memb; =>> [  { value="Fruits", nesting=0, makeContLI=function()}, 
-									{ value="Apples", nesting=1, makeContLI=function()},
-									{ value="Berries", nesting=1, makeContLI=function()}, 
-									{ value="Kliukva", nesting=2, makeContLI=function()},
-									{ value="Zemlianika", nesting=2, makeContLI=function()},
-									{ value="Vegitable", nesting=0, makeContLI=function()}, 
-									{ value="Kartoshka", nesting=1, makeContLI=function()}  ]
+                                    { value="Apples", nesting=1, makeContLI=function()},
+                                    { value="Berries", nesting=1, makeContLI=function()}, 
+                                    { value="Kliukva", nesting=2, makeContLI=function()},
+                                    { value="Zemlianika", nesting=2, makeContLI=function()},
+                                    { value="Vegitable", nesting=0, makeContLI=function()}, 
+                                    { value="Kartoshka", nesting=1, makeContLI=function()}  ]
 	};
 
-	ListConstructor.prototype.makeList = function () {
-		var lst = document.createElement('UL');---------------------outer UL(container);
-		lst.setAttribute('data-depth', -1);
-		var uls = {};-----------------------------------------------object for stote links on all ULs
-		uls['-1'] = lst;
-		this.members.push({});
-		var i, elm, nest, ul, li;
-		for (i = 0; i < this.members.length - 1; i += 1) {
-			elm = this.members[i];---------------------------------- <<== { value="Fruits", nesting=0, makeContLI=function()} and so on ...
-			nest = elm.nesting;------------------------------------- <<== nesting = 0 ...
-			if (nest < this.members[i + 1].nesting) { -------------- checks if nesting = 0 for Fruits < nesting = 1 for Apples and so on ...
-				ul = document.createElement('UL'); ----------------- than Apples will be nest in Fruits, creates container ul(0) for it and so on ...
-				ul.setAttribute('data-depth', nest);
-				uls[nest] = ul; ------------------------------------ save link on this ul(0) and so on ...
-				li = this.members[i].makeContLI(); ----------------- make li(Fruits) container for our ul(0), <li>Eruits</li>and so on ...
-				li.appendChild(ul); -------------------------------- =>>    <li>Fruits
-																				<ul data-depth="0"></ul>
-																			</li>	
-				uls[nest - 1].appendChild(li); ---------------------there is previous ul, and our li Fruits appends to ul(-1) and so on ...
-																	 =>>    <ul data-depth="-1">
-																				<li>Fruits
-																					<ul data-depth="0"><li>Apples</li></ul>
-																				</li>	
-																			</ul>	
-				//(this.members[i]).li = li; ------------------------- { value="Fruits", nesting=0, makeContLI=function(), li=<li>Fruits...} and so on ...
-			} else { ------------------------------------------------- in else cases
-				li = this.members[i].makeContLI(); ------------------- make LI and so on ...
-				uls[nest - 1].appendChild(li); ----------------------- li without nesting ul appends to his parent and so on ...
-				//(this.members[i]).li = li;
+    ListConstructor.prototype.makeList = function () {
+        var lst = document.createElement('UL');-------------outer UL(container);
+        lst.setAttribute('data-depth', -1);
+        var uls = {};---------------------------------------object for stote links on all ULs
+        uls['-1'] = lst;
+        this.members.push({});
+        var i, elm, nest, ul, li;
+        for (i = 0; i < this.members.length - 1; i += 1) {
+            elm = this.members[i];------------------------- <<== { value="Fruits", nesting=0, makeContLI=function()} and so on ...
+            nest = elm.nesting;---------------------------- <<== nesting = 0 ...
+            if (nest < this.members[i + 1].nesting) { ----- checks if nesting = 0 for Fruits < nesting = 1 for Apples and so on ...
+                ul = document.createElement('UL'); -------- than Apples will be nest in Fruits, creates container ul(0) for it and so on ...
+                ul.setAttribute('data-depth', nest);
+                uls[nest] = ul; --------------------------- save link on this ul(0) and so on ...
+                li = this.members[i].makeContLI(); -------- make li(Fruits) container for our ul(0), <li>Eruits</li>and so on ...
+                li.appendChild(ul); ----------------------- =>>  <li>Fruits
+                                                                    <ul data-depth="0"></ul>
+                                                                 </li>	
+                uls[nest - 1].appendChild(li); ------------ there is previous ul, and our li Fruits appends to ul(-1) and so on ...
+                                                            =>>  <ul data-depth="-1">
+                                                                    <li>Fruits
+                                                                        <ul data-depth="0"><li>Apples</li></ul>
+                                                                    </li>	
+                                                                 </ul>	
+                //(this.members[i]).li = li; -------------- { value="Fruits", nesting=0, makeContLI=function(), li=<li>Fruits...} and so on ...
+            } else { -------------------------------------- in else cases
+                li = this.members[i].makeContLI(); -------- make LI and so on ...
+                uls[nest - 1].appendChild(li); ------------ li without nesting ul appends to his parent and so on ...
+                //(this.members[i]).li = li;
             }
-		}
-		//this.members.pop(this.members.length - 1);
+        }
+        //this.members.pop(this.members.length - 1);
 		this.lst = lst;  ==>>   <ul data-depth="-1">
                                     <li>Fruits
                                         <ul data-depth="0">
@@ -156,14 +156,14 @@ Constructor ListConstructor makes 'UL' list.
 	};
 -------------------------------------------------------------------
 
-	function UserList(str) {
-		var ul = new ListConstructor(str);
-		ul.makeMembers();
-		ul.makeList();
-		//ul.makeStructure();
-		this.list = ul.lst;
-		//this.structure = ul.structure;
-	}
+    function UserList(str) {
+        var ul = new ListConstructor(str);
+        ul.makeMembers();
+        ul.makeList();
+        //ul.makeStructure();
+        this.list = ul.lst;
+        //this.structure = ul.structure;
+    }
 
     return new UserList(str).list; ----------------------its rezult
 	
