@@ -39,15 +39,13 @@ This data takes DataString constructor, which method prepareData makes the array
 		return elements;
 	};
 
-	data = new DataString(data).prepareData =>>	[
-													{ nesting=0,  value="Fruits" },
-													{ nesting=1,  value="Apples" },
-													{ nesting=1,  value="Berries" },
-													{ nesting=2,  value="Kliukva" },
-													{ nesting=2,  value="Zemlianika" },	
-													{ nesting=0,  value="Vegitable" },	
-													{ nesting=1,  value="Kartoshka" }
-												]
+	data = new DataString(data).prepareData =>>	[ { nesting=0,  value="Fruits" },
+												  { nesting=1,  value="Apples" },
+												  { nesting=1,  value="Berries" },
+												  { nesting=2,  value="Kliukva" },
+												  { nesting=2,  value="Zemlianika" },	
+												  { nesting=0,  value="Vegitable" },	
+												  { nesting=1,  value="Kartoshka" } ]
 
 nesting property - nesting level (where will be each 'LI' element in DOM tree);
 value property - value of each peace of data without spaces at the begin.

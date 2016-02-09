@@ -32,3 +32,5 @@ And program construct next list:
 			</ul>
 		</li>
 	</ul>
+	
+For datail information how it work see other/howItWorks.txt
