@@ -6,7 +6,7 @@ var listUL = function (str) {
     DataString.prototype.prepareData = function () {
         var elements = this.data.split('\n');
         var opt = null;
-        var el = null;
+        var el = null; 
         var i;
         for (i = 0; i < elements.length; i += 1) {
             el = elements[i];
@@ -58,14 +58,14 @@ var listUL = function (str) {
                 li = this.members[i].makeContLI();
                 li.appendChild(ul);
                 uls[nest - 1].appendChild(li);
-                (this.members[i]).li = li;
+                //(this.members[i]).li = li;
             } else {
                 li = this.members[i].makeContLI();
                 uls[nest - 1].appendChild(li);
-                (this.members[i]).li = li;
+                //(this.members[i]).li = li;
             }
         }
-        this.members.pop(this.members.length - 1);
+        //this.members.pop(this.members.length - 1);
         this.lst = lst;
     };
     ListConstructor.prototype.makeStructure = function () {
@@ -82,9 +82,9 @@ var listUL = function (str) {
         var ul = new ListConstructor(str);
         ul.makeMembers();
         ul.makeList();
-        ul.makeStructure();
+        //ul.makeStructure();
         this.list = ul.lst;
-        this.structure = ul.structure;
+        //this.structure = ul.structure;
     }
 
     return new UserList(str).list;
