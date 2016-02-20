@@ -1,6 +1,6 @@
-function route(handle, pathname, res) {
+function route(handle, pathname, res, data) {
     if (typeof handle[pathname] === 'function') {
-        handle[pathname](res);
+        handle[pathname](res, data);
     } else {
         res.writeHead(404, {"Content-Type": "text/plain"});
         res.write("404 Not found, ;(");

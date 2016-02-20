@@ -1,5 +1,8 @@
 var fs = require('fs');
+var listMaker = require('./main.js');
 var querystring = require('querystring');
+var querystring = require('querystring');
+
 var createForm = function (res) {
     var form = '<form>' +
     '<textarea name="text"></textarea>'+
@@ -16,7 +19,7 @@ var startPage = function (res) {
     })
 };
 var sendJS = function(res) {
-    fs.readFile('js/main.js', function(err, cont) {
+    fs.readFile('js/ajax.js', function(err, cont) {
         res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
         res.write(cont);
         res.end();
@@ -29,7 +32,14 @@ var sendCSS = function(res) {
         res.end();
     })
 };
+var makeList = function (res, data) {
+    var txt = listMaker(data);
+    res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
+    res.write(txt);
+    res.end();
+}
 exports.createForm = createForm;
 exports.startPage = startPage;
 exports.sendJS = sendJS;
 exports.sendCSS = sendCSS;
+exports.makeList = makeList;

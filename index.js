@@ -6,4 +6,5 @@ handle['/getdata'] = handlers.createForm;
 handle['/'] = handlers.startPage;
 handle['/mainjs'] = handlers.sendJS;
 handle['/maincss'] = handlers.sendCSS;
+handle['/getList'] = handlers.makeList;
 server.start(router.route, handle);
