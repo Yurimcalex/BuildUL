@@ -1,3 +1,13 @@
+-------------------------------------------------------------
+
+Needs make recursion function for getting rezult.
+
+It branch  builds UL on the server side. 
+
+There another rendering context (node.js not browser) and no DOM, thats why used another algoritm for UL building.
+
+-------------------------------------------------------------
+
 Its for constructing unordered list from user data.
 
 User inputs data to form in taxtarea section, for example:
