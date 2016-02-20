@@ -116,9 +116,10 @@ window.onload = function () {
                 listhtml.appendChild(listUL(area.value));
                 var div = document.createElement('div');
                 var txt = document.createTextNode(listhtml.innerHTML);
-                div.setAttribute('id', 'cont');
                 div.appendChild(txt);
-                div.classList.add('cont');
+                div.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+                div.style.marginLeft = '5px';
+                div.style.marginRight = '5px';
                 listhtml.appendChild(div);
                 flag = false;
             }
