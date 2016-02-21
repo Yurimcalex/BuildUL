@@ -1,3 +1,11 @@
+-----------------------------------------------------------------
+
+Its versin(branch) works(buikds UL) on client side.
+
+Version on branch serverSide works on server side.
+
+-----------------------------------------------------------------
+
 Its for constructing unordered list from user data.
 
 User inputs data to form in taxtarea section, for example:
