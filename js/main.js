@@ -13,7 +13,8 @@ function prepareData(str) {
   });
 }
 
-var data = 'Tolik\n Petia\n  Igor\n  Slava\n Natasha\n  Kira\n   Stepa\nIna\n Katia\n  Sveta';
+//var data = 'Tolik\n Petia\n  Igor\n  Slava\n Natasha\n  Kira\n   Stepa\nIna\n Katia\n  Sveta';
+var data = str;
 prepareData(data);
 
 function makeArrsFromItems(items) {
@@ -83,33 +84,93 @@ function makeStruct(items, nestingItems, names) {
 
 }
 
-var r = makeStruct(items, nestingItems, names);
+var r = makeStruct(items, nestingItems);
 r;
 
-r[1];
-function rec(el) {
-  if (!el[1]) return '<li>' + el[0] + '</li>';
- 
-  return '<li>' + el[0] + '<ul>' + rec(el[1]) + '</ul>' + '</li>';
-  
-}
-rec(r[1]);
+var startTags = [];
+var endTags = '</ul></li>';
+var parentArr;
 
-var rezult = '';
 
 function f(arr) {
   for (var i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
+    parentArr = arr;
+    
     if (typeof arr[i] === 'object') {
       f(arr[i]);
+  
     } else {
-      rezult += '<div>' + arr[i] + '</div>';
+      //console.log(arr[i],'<<==',parentArr);
+      if (parentArr.length > 1) {
+        startTags.push('<li>' + arr[i] + '<ul>');
+      } else {
+        startTags.push('<li>' + arr[i] + '</li>');
+      }
+      
     }
   }
 }
 
 f(r);
-rezult;
+
+
+function findSlicePoints(arr) {
+  var rezult = [];
+  var prev = -1, next;
+  
+  for (var i = 0; i < arr.length; i++) {
+    next = arr[i];
+    
+    if (next < prev) rezult.push(i);
+    
+    prev = next;
+  }
+  return rezult;
+}
+
+var sp = findSlicePoints(nestingItems);
+
+
+function makeListUL(s, e, sp, arr) {
+  var p = sp.slice(0);
+  p.unshift(0);
+  p.push(arr.length);
+  
+  var rezult = '';
+  var leftPart = [];
+  var endTagsAmount = [];
+  
+  for (var i = 0; i < p.length - 1; i++) {  
+    var p1 = s.slice(p[i], p[i + 1]).join('');
+    leftPart.push(p1);
+  }
+  
+  arr.push(0); // for end of ul list
+  p.shift(0)
+  
+  for (var i = 0; i < p.length; i++) {
+    endTagsAmount.push(arr[p[i] - 1] - arr[p[i]]);
+  }
+  
+  for (var i = 0; i < endTagsAmount.length; i++) {
+    rezult += leftPart[i] + makeEndTag(endTagsAmount[i], e);
+  }
+  
+  return '<ul>' + rezult + '</ul>';
+  
+  
+  function makeEndTag(amount, e) {
+    var rez = '';
+    while(amount--) {
+      rez += e;
+    }
+    return rez;
+  }
+  
+}
+
+return makeListUL(startTags, endTags, sp, nestingItems);
+
 
 };
 
