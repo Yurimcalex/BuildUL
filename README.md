@@ -12,7 +12,7 @@ Its for constructing unordered list from user data.
 
 User inputs data to form in taxtarea section, for example:
 
-data = 'Fruits\n Apples\n Berries\n  Kliukva\n  Zemlianika\nVegitable\n Kartoshka';
+data = 'Fruits\n Apples\n Berries\n  Cranberry\n  Strawberry\nVegitable\n Potato';
 
 	Fruits
     -Apples             
