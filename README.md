@@ -1,8 +1,8 @@
 -------------------------------------------------------------
 
-Needs make recursion function for getting rezult.
+Lounch: node index.js
 
-It branch  builds UL on the server side. 
+It version(branch)  builds UL on the server side. 
 
 There another rendering context (node.js not browser) and no DOM, thats why used another algoritm for UL building.
 
@@ -17,30 +17,31 @@ data = 'Fruits\n Apples\n Berries\n  Kliukva\n  Zemlianika\nVegitable\n Kartoshk
 	Fruits
     -Apples             
     -Berries        
-    --Kliukva             
-    --Zemlianika        
-    Vegitable       
-    -Kartoshka
+    --Cranberry             
+    --Strawberry        
+    Vegitables       
+    -Potato
+	
+'-' - its one 'space';
 	
 And program construct next list:
 
-	<ul data-depth="-1">
+	<ul>
 		<li>Fruits
-			<ul data-depth="0">
+			<ul>
 				<li>Apples</li>
 				<li>Berries
-					<ul data-depth="1">
-						<li>Kliukva</li>
-						<li>Zemlianika</li>
+					<ul>
+						<li>Cranberry</li>
+						<li>Strawberry</li>
 					</ul>
 				</li>
 			</ul>
 		</li>
-		<li>Vegitable
-			<ul data-depth="0">
-				<li>Kartoshka</li>
+		<li>Vegitables
+			<ul>
+				<li>Potato</li>
 			</ul>
 		</li>
 	</ul>
 	
-For datail information how it work see other/howItWorks.txt
