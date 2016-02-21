@@ -10,15 +10,15 @@ Its for constructing unordered list from user data.
 
 User inputs data to form in taxtarea section, for example:
 
-data = 'Fruits\n Apples\n Berries\n  Kliukva\n  Zemlianika\nVegitable\n Kartoshka';
+data = 'Fruits\n Apples\n Berries\n  Cranberry\n  Strawberry\nVegitable\n Potato';
 
 	Fruits
     -Apples             
     -Berries        
-    --Kliukva             
-    --Zemlianika        
-    Vegitable       
-    -Kartoshka
+    --Cranberry             
+    --Strawberry        
+    Vegitables       
+    -Potato
 	
 And program construct next list:
 
@@ -28,15 +28,15 @@ And program construct next list:
 				<li>Apples</li>
 				<li>Berries
 					<ul data-depth="1">
-						<li>Kliukva</li>
-						<li>Zemlianika</li>
+						<li>Cranberry</li>
+						<li>Strawberry</li>
 					</ul>
 				</li>
 			</ul>
 		</li>
 		<li>Vegitable
 			<ul data-depth="0">
-				<li>Kartoshka</li>
+				<li>Potato</li>
 			</ul>
 		</li>
 	</ul>
