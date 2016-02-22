@@ -1,7 +1,6 @@
 var fs = require('fs');
 var listMaker = require('./main.js');
 var querystring = require('querystring');
-var querystring = require('querystring');
 
 var createForm = function (res) {
     var form = '<form>' +
