@@ -33,6 +33,9 @@ var sendCSS = function(res) {
 };
 var makeList = function (res, data) {
     var txt = listMaker(data);
+    fs.writeFile('./logs/userInpt.txt', txt + '\r\n', function(err) {
+        if (err) throw err;
+    });
     res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
     res.write(txt);
     res.end();
