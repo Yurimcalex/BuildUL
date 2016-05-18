@@ -2,76 +2,76 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Create custom UL</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8008/maincss">
-<script type="text/javascript" src="http://localhost:8008/mainjs"></script>
-<style>
-.list {
-	height: 435px;
-	border-top: 1px solid white;
-}
-</style>
+<title>UL creation</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="tips">
-	<div>
-		<p>1 Step =></p>
-		<p>Press Create List</p>
-	</div>
-	<div>
-		<p>2 Step =></p>
-		<p>Use: Enter - new line, 1 space - nest</p>
-	</div>
-	<div>
-		<p>3 Step =>></p>
-		<p>Press Show List HTML</p>
-	</div>
-</div>
-<div id="wrapper">
-    <ul id="menu" class="menu">
-        <li><a class="lnk">Create List/Reset</a></li>
-        <li><a class="lnk">Show List HTML</a></li>
-    </ul>
-    <div id="result">
-        <div id="list" class="list">
-            <pre>
-            
-            
-        Fruits
-         Apples               \
-         Berries        *******\
-          Cranberry             \
-          Strawberry            /
-        Vegitables      *******/
-         Potato               /
-            </pre>
-        </div>
-        <div id="listhtml" class="list">
-            <pre>
-                <ul data-depth="-1"><li>Fruits<ul data-depth="0"><li>Apples</li><li>Berries<ul data-depth="1"><li>Cranberry</li><li>Strawberry</li></ul></li></ul></li><li>Vegitables<ul data-depth="0"><li>Potato</li></ul></li></ul>
-            </pre>
-            <pre>
+    <article class="container">
+        <header class="header">
+            <h1>UL creation</h1>
+        </header>
+        <section class="describe-steps">
+            <p class="stp brdr-rds-left"><span>1 Step</span><span>Press Create list</span></p>
+            <p class="stp"><span>2 Step</span><span>Usage: press Enter for new item, Space for new list</span></p>
+            <p class="stp brdr-rds-right"><span>3 Step</span><span>Press Show HTML code</span></p>
+        </section>
+        <section class="rezult">
+            <header class="btns">
+                <ul class="menu-hor">
+                    <li id="templList">Create list/Reset</li>
+                    <li id="rezultList">Show HTML code</li>
+                </ul>
+            </header>
+            <div class="inpt" id="inpt">
+                <pre>
+                    1. Fruits
+                     1.1 Apples              \
+                      1.1.1 Antonovka         \
+                     1.2 Berries        *******\
+                      1.2.1 Cranberry           \
+                      1.2.2 Strawberry          /
+                    2. Vegitables       *******/
+                     2.1 Potato               /
+                      2.1.1 Kivi             /
+                </pre>
+            </div>
+            <div class="outpt" id="outpt">
+                <pre>
+                    <ul><li>1. Fruits<ul><li>1.1 Apples<ul><li>1.1.1 Antonovka</li></ul></li><li>1.2 Berries<ul><li>1.2.1 Cranberry</li><li>1.2.2 Strawberry</li></ul></li></ul></li><li>2. Vegitables<ul><li>2.1 Potato<ul><li>2.1.1 Kivi</li></ul></li></ul></li></ul>
+                </pre>
+                <pre>
             &lt;ul&gt;
-                &lt;li&gt;Fruits
+                &lt;li&gt;1. Fruits
                     &lt;ul&gt;
-                        &lt;li&gt;Apples&lt;/li&gt;
-                        &lt;li&gt;Berries
+                        &lt;li&gt;1.1 Apples
                             &lt;ul&gt;
-                                &lt;li&gt;Cranberry&lt;/li&gt;
-                                &lt;li&gt;Strawberry&lt;/li&gt;
+                                &lt;li&gt;1.1.1 Antonovka&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;1.2 Berries
+                            &lt;ul&gt;
+                                &lt;li&gt;1.2.1 Cranberry&lt;/li&gt;
+                                &lt;li&gt;1.2.2 Strawberry&lt;/li&gt;
                             &lt;/ul&gt;
                         &lt;/li&gt;
                     &lt;/ul&gt;
                 &lt;/li&gt;
-                &lt;li&gt;Vegitables
+                &lt;li&gt;2. Vegitables
                     &lt;ul&gt;
-                        &lt;li&gt;Potato&lt;/li&gt;
+                        &lt;li&gt;2.1 Potato
+                            &lt;ul&gt;
+                                &lt;li&gt;2.1.1 Kivi&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
                     &lt;/ul&gt;
                 &lt;/li&gt;
             &lt;/ul&gt;
-            </pre>
-        </div>
-    </div>
-</div>
+                </pre>
+            </div>
+        </section>
+    </article>
+
+    <script src="index.js"></script>
+    <script src="handlers.js"></script>
 </body>
 </html>

@@ -1,0 +1,161 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #000000;
+    color: white;
+}
+
+.header {
+    margin: 0px;
+    padding: 0px;
+    background-color: #333333;
+    border-bottom: 2px solid white;
+}
+
+.header h1 {
+    margin: 0px;
+    padding: 2px 2px 2px 7px;
+}
+
+.describe-steps, .rezult {
+    width: 90%;
+    margin: 10px auto;
+    padding: 9px;
+    background-color: #333333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.rezult {
+    padding-bottom: 6px;
+    margin-bottom: 9px;
+}
+
+.stp {
+    width: 33.33%;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    border: 5px solid white;
+    border-left: none;
+    border-right: none;
+}
+
+.stp span {
+    width: 20%;
+    height: 50px;
+    display: block;
+    float: left;
+    background-color: #1E1E5A;
+    color: #C0C0C0;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+.stp span + span {
+    width: 80%;
+    float: right;
+    background-color: #C0C0C0;
+    color: black;
+}
+
+.brdr-rds-left {
+    border-radius: 6px 0 0 6px;
+}
+
+.brdr-rds-right {
+    border-radius: 0 6px 6px 0;
+}
+
+.menu-hor {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    overflow: hidden;
+}
+
+.menu-hor li {
+    float: left;
+    width: 50%;
+    padding: 5px 0 5px 0;
+    border-radius: 6px 0 0 0;
+    background-color: #C0C0C0;
+    color: black;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.menu-hor li:hover {
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-hor li + li {
+    border-radius: 0 6px 0 0;
+    background-color: #000000;
+    color: white;
+}
+
+.menu-hor li + li:hover {
+    background-color: #C0C0C0;
+    color: black;
+    cursor: pointer;
+}
+
+div {
+    width: 49.7%;
+    height: 460px;
+    box-sizing: border-box;
+    border-top: 1px solid white;
+    background-color: #1E1E5A;
+}
+
+.inpt {
+    float: left;
+    border-right: 4px solid #C0C0C0;
+}
+
+.outpt {
+    float: right;
+    border-left: 4px solid #000000;
+    overflow: auto;
+}
+.outpt ul {
+    margin: 0px;
+}
+
+pre {
+    margin: 0px;
+    padding: 0px;
+}
+
+.inpt {
+    font-size: 1.3em;
+}
+
+.inpt pre {
+    margin-top: 50px;
+}
+
+textarea {
+    width: 90%;
+    height: 90%;
+    margin: 10px;
+    padding: 5px;
+    background-color: #1E1E5A;
+    border: none;
+    font-size: 1.2em;
+    overflow: auto;
+    color: white;
+}
+
+section {
+    margin: 10px;
+}
+
+section + section {
+    background-color: rgba(255, 255, 255, .2);
+}
