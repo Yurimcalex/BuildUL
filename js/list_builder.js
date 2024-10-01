@@ -16,7 +16,7 @@ var listUL = function (str) {
             elements[i] = opt;
         }
 
-        console.log(getDepths(this.data ));
+        //console.log(getListDepth(this.data), '1');
 
         return elements;
     };
@@ -42,6 +42,10 @@ var listUL = function (str) {
             el = this.data[i];
             memb[i] = new Member(el);
         }
+        
+        //console.log(this.data);
+        //console.log(memb, '2');
+
         this.members = memb;
     };
     ListConstructor.prototype.makeList = function () {
@@ -85,9 +89,10 @@ var listUL = function (str) {
         var ul = new ListConstructor(str);
         ul.makeMembers();
         ul.makeList();
-        //ul.makeStructure();
+        ul.makeStructure();
         this.list = ul.lst;
-        //this.structure = ul.structure;
+        this.structure = ul.structure;
+        console.log(this);
     }
 
     return new UserList(str).list;
@@ -99,9 +104,9 @@ var listUL = function (str) {
 
 document.addEventListener("DOMContentLoaded", () => {
     const data = 'Fruits\n Apples\n Berries\n  Cranberry\n  Strawberry\nVegitable\n Potato';
-    const list_str = listUL(data);
-
-    document.body.append(list_str);
+    const list = createList( getListDepth(data) );
+    console.log(list);
+    document.body.append(list);
 });
 
 
@@ -115,4 +120,34 @@ function getListDepth(str) {
         value: line.slice(depth)
       }
     });
+}
+
+
+function createList(data) {
+  const items = [...data];
+  const ul = document.createElement('UL');
+  const lists = {};
+  
+  ul.setAttribute('data-depth', -1);
+  lists[-1] = ul;
+  items.push({});
+
+  for (let i = 0; i < items.length - 1; i += 1) {
+    const { nesting, value } = items[i];
+    const li = document.createElement('LI');
+    li.textContent = value;
+
+    if (nesting < items[i + 1].nesting) {
+      const subUl = document.createElement('UL');
+      subUl.setAttribute('data-depth', nesting);
+      lists[nesting] = subUl;
+      li.append(subUl);
+      lists[nesting - 1].append(li);
+    
+    } else {
+      lists[nesting - 1].append(li);
+    }
+  }
+
+  return ul;
 }
