@@ -59,45 +59,52 @@ body {
   height: 485px;
 }
 
-
-
-
-#menu {
-  width: 100%;
+/* --- menu ---*/
+.menu {
+  display: flex;
   margin: 10px auto 0 auto;
   padding-left: 0;
-  overflow: hidden;
 }
-#menu li {
-  float: left;
-  width: 50%;
+
+.menu li {
+  flex: 1;
   list-style: none;
   text-align: center;
 }
-#menu li a {
+
+.menu a {
   display: block;
   padding: 8px 0;
-  text-decoration: none;
-  font-size: 1.3em;
-  background-color: silver;
-  color: black;
   border-radius: 10px 0 0 0;
-}
-#menu li a:hover {
-  background-color: black;
-  color: white;
-  cursor: pointer;
-}
-#menu li + li a {
-  background-color: black;
-  color: white;
-  border-radius: 0 10px 0 0;
-}
-#menu li + li a:hover {
+  font-size: 1.3em;
+  text-decoration: none;
   background-color: silver;
   color: black;
   cursor: pointer;
 }
+
+.menu a:hover {
+  background-color: black;
+  color: white;
+}
+
+.menu li + li a {
+  border-radius: 0 10px 0 0;
+  background-color: black;
+  color: white;
+}
+
+.menu li + li a:hover {
+  background-color: silver;
+  color: black;
+}
+
+
+
+
+
+
+
 #rezult {
   width: 100%;
   margin: 0 auto;
