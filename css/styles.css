@@ -1,49 +1,60 @@
 body {
   background-color: #000000;
 }
-#tips {
+
+/* --- tips section --- */
+.tips {
+  display: flex;
   width: 90%;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
   margin: 10px auto;
   padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
-#tips div {
-  width: 33.3%;
+
+.tips > div {
+  display: flex;
+  flex: 1;
   height: 100px;
   background-color: #fff;
-  float: left;
 }
-#tips div:first-child {
+
+.tips > div:first-child {
   border-radius: 5px 0 0 5px;
 }
-#tips div:last-child {
+
+.tips > div:last-child {
   border-radius: 0 5px 5px 0;
 }
-#tips div p {
-  margin: 5px 0;
+
+.tips p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 90px;
-  padding-top: 20px;
-  height: 70px;
-  background-color: silver;
-  color: white;
-}
-#tips div p:first-child {
-  width: 30%;
-  float: left;
+  margin: 5px 0;
   text-align: center;
+  background-color: silver;
+}
+
+.tips p:first-child {
+  width: 30%;
   font-size: 1.2em;
   background-color: #1e1e5a;
   color: silver;
 }
-#tips div p:last-child {
+
+.tips p:last-child {
   width: 70%;
-  float: right;
-  font-size: 1em;
-  text-align: center;
+  padding: 0 10px;
+  font-size: 0.96em;  
   color: black;
 }
+
+
+
+
+
 #wrapper {
   width: 90%;
   margin: 10px auto;
