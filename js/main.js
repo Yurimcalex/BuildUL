@@ -97,19 +97,31 @@ window.onload = function () {
         var lks = document.getElementById('menu').children;
         var area;
         var flag = false;
+
+        console.log(lks);
+
         lks[0].firstChild.onclick = function () {
             listhtml.innerHTML = '';
-            var xhr = new XMLHttpRequest;
-            xhr.open('GET', '/getdata', true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    list.innerHTML = xhr.responseText;
-                    area = document.querySelector('form textarea');
-                    area.focus();
-                    flag = true;
-                }
-            };
-            xhr.send(null);
+
+            // var xhr = new XMLHttpRequest;
+            // xhr.open('GET', '/getdata', true);
+            // xhr.onreadystatechange = function () {
+            //     if (xhr.readyState === 4 && xhr.status === 200) {
+            //         list.innerHTML = xhr.responseText;
+            //         area = document.querySelector('form textarea');
+            //         area.focus();
+            //         flag = true;
+            //     }
+            // };
+            // xhr.send(null);
+
+            list.innerHTML =
+                '<form>' +
+                '<textarea name="text"></textarea>'+
+                '</form>';
+            area = document.querySelector('form textarea');
+            area.focus();
+            flag = true;
         };
         lks[1].onclick = function () {
             if (flag) {
