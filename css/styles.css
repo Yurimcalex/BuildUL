@@ -2,14 +2,17 @@ body {
   background-color: #000000;
 }
 
-/* --- tips section --- */
-.tips {
-  display: flex;
+.section {
   width: 90%;
   margin: 10px auto;
   padding: 10px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- tips section --- */
+.tips {
+  display: flex;
 }
 
 .tips > div {
@@ -51,18 +54,14 @@ body {
   color: black;
 }
 
-
-
-
-
-#wrapper {
-  width: 90%;
-  margin: 10px auto;
-  padding: 10px;
+/* --- wrapper section --- */
+.wrapper {
   height: 485px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
 }
+
+
+
+
 #menu {
   width: 100%;
   margin: 10px auto 0 auto;
