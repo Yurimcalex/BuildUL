@@ -15,6 +15,9 @@ var listUL = function (str) {
             opt.value = el.slice(opt.nesting);
             elements[i] = opt;
         }
+
+        console.log(getDepths(this.data ));
+
         return elements;
     };
 
@@ -100,3 +103,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.append(list_str);
 });
+
+
+function getListDepth(str) {
+  return str
+    .split('\n')
+    .map(line => {
+      const depth = line.lastIndexOf(' ') + 1;
+      return {
+        nesting: depth,
+        value: line.slice(depth)
+      }
+    });
+}
