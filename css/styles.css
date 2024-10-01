@@ -108,6 +108,8 @@ body {
   flex: 1;
   height: 435px;
   border-top: 1px solid white;
+  background-color: #1e1e5a;
+  color: white;
 }
 
 /* --- list --- */
@@ -115,8 +117,6 @@ body {
   border-right: 4px solid silver;
   border-radius: 0 0 0 5px;
   font-size: 1.5em;
-  background-color: #1e1e5a;
-  color: white;
 }
 
 .list form {
@@ -136,53 +136,6 @@ body {
 
 /* --- list html --- */
 .listhtml {
-
-}
-
-
-
-/*#list {
-  height: 435px;
-  border-top: 1px solid white;
-  float: left;
-  background-color: #1e1e5a;
-  width: 49.5%;
-  border-right: 4px solid silver;
-  font-size: 1.5em;
-  color: white;
-  overflow: hidden;
-}
-#list form {
-  width: 90%;
-  padding: 5px;
-  margin: 10px auto auto auto;
-  background-color: #1e1e5a;
-  color: white;
-  overflow: auto;
-}
-#list form textarea {
-  width: 95%;
-  font-size: 1.2em;
-  background-color: inherit;
-  color: white;
-  height: 350px;
-  border: none;
-}
-
-
-
-#listhtml {
-  float: right;
-  background-color: #1e1e5a;
-  width: 49.5%;
   border-left: 4px solid black;
-  color: white;
-  overflow: auto;
+  border-radius: 0 0 5px 0;
 }
-#listhtml pre {
-  padding: 0;
-  margin: 0;
-}
-#listhtml pre ul {
-  margin: 0;
-}*/
