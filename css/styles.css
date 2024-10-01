@@ -59,7 +59,7 @@ body {
   height: 485px;
 }
 
-/* --- menu ---*/
+/* --- menu --- */
 .menu {
   display: flex;
   margin: 10px auto 0 auto;
@@ -99,20 +99,49 @@ body {
   color: black;
 }
 
-
-
-
-
-
-
-#rezult {
-  width: 100%;
-  margin: 0 auto;
-  height: 435px;
-  background-color: #1e1e5a;
-  border-radius: 0 0 10px 10px;
+/* --- result container --- */
+.result {
+  display: flex;
 }
-#list {
+
+.result > div {
+  flex: 1;
+  height: 435px;
+  border-top: 1px solid white;
+}
+
+/* --- list --- */
+.list {
+  border-right: 4px solid silver;
+  border-radius: 0 0 0 5px;
+  font-size: 1.5em;
+  background-color: #1e1e5a;
+  color: white;
+}
+
+.list form {
+  width: 90%;
+  padding: 5px;
+  margin: 10px auto auto auto;
+}
+
+.list form textarea {
+  height: 350px;
+  width: 95%;
+  border: none;
+  font-size: 1.2em;
+  background-color: inherit;
+  color: white;
+}
+
+/* --- list html --- */
+.listhtml {
+
+}
+
+
+
+/*#list {
   height: 435px;
   border-top: 1px solid white;
   float: left;
@@ -139,6 +168,9 @@ body {
   height: 350px;
   border: none;
 }
+
+
+
 #listhtml {
   float: right;
   background-color: #1e1e5a;
@@ -153,4 +185,4 @@ body {
 }
 #listhtml pre ul {
   margin: 0;
-}
+}*/

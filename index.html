@@ -6,12 +6,6 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="js/list_builder.js"></script>
     <script src="index.js"></script>
-    <style>
-        .list {
-	       height: 435px;
-	       border-top: 1px solid white;
-        }
-    </style>
 </head>
 <body>
     <div class="tips section">
@@ -29,17 +23,15 @@
         </div>
     </div>
 
+    <div class="wrapper section">
+        <ul id="menu" class="menu">
+            <li><a class="lnk">Create List/Reset</a></li>
+            <li><a class="lnk">Show List HTML</a></li>
+        </ul>
 
-
-<div class="wrapper section">
-    <ul class="menu">
-        <li><a class="lnk">Create List/Reset</a></li>
-        <li><a class="lnk">Show List HTML</a></li>
-    </ul>
-
-    <div id="result">
-        <div id="list" class="list">
-            <pre>
+        <div class="result">
+            <div id="list" class="list">
+                <pre>
             
             
         Fruits
@@ -49,13 +41,12 @@
           Strawberry            /
         Vegitables      *******/
          Potato               /
-            </pre>
-        </div>
-        <div id="listhtml" class="list">
-            <pre>
-                <ul data-depth="-1"><li>Fruits<ul data-depth="0"><li>Apples</li><li>Berries<ul data-depth="1"><li>Cranberry</li><li>Strawberry</li></ul></li></ul></li><li>Vegitables<ul data-depth="0"><li>Potato</li></ul></li></ul>
-            </pre>
-            <pre>
+                </pre>
+            </div>
+            <div id="listhtml" class="listhtml">
+                <pre><ul data-depth="-1"><li>Fruits<ul data-depth="0"><li>Apples</li><li>Berries<ul data-depth="1"><li>Cranberry</li><li>Strawberry</li></ul></li></ul></li><li>Vegitables<ul data-depth="0"><li>Potato</li></ul></li></ul>
+                </pre>
+                <pre>
             &lt;ul&gt;
                 &lt;li&gt;Fruits
                     &lt;ul&gt;
@@ -74,9 +65,9 @@
                     &lt;/ul&gt;
                 &lt;/li&gt;
             &lt;/ul&gt;
-            </pre>
+                </pre>
+            </div>
         </div>
     </div>
-</div>
 </body>
 </html>
