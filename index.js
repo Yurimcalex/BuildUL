@@ -11,9 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
   		'<form>' +
         '<textarea name="text"></textarea>'+
       '</form>';
-
      document.querySelector('form textarea').focus();
      isListCreationEnabled = true;
   });
-	//new List(data).render(document.body);  
+
+  showListBtn.addEventListener('click', () => {
+  	if (!isListCreationEnabled) return;
+  	const inputText = document.querySelector('form textarea').value;
+  	new List(inputText).render(outcomeContainer);
+  	const result = document.createElement('div');
+  	result.textContent = outcomeContainer.innerHTML;
+  	result.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+  	result.style.marginLeft = '5px';
+  	result.style.marginRight = '5px';
+  	outcomeContainer.append(result);
+  	isListCreationEnabled = false;
+  });
 });
