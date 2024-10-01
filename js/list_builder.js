@@ -50,9 +50,3 @@ class List {
     container.append(this.ul);
   }
 }
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const data = 'Fruits\n Apples\n Berries\n  Cranberry\n  Strawberry\nVegitable\n Potato';
-    new List(data).render(document.body);
-});
