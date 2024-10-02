@@ -84,19 +84,17 @@ body {
 }
 
 .menu a:hover {
-  background-color: black;
-  color: white;
+  opacity: 0.8;
+  color: #4B4B4B;
 }
 
 .menu li + li a {
   border-radius: 0 10px 0 0;
-  background-color: black;
-  color: white;
 }
 
-.menu li + li a:hover {
-  background-color: silver;
-  color: black;
+.menu a.selected {
+  background: black;
+  color: white;
 }
 
 /* --- result container --- */
@@ -110,6 +108,11 @@ body {
   border-top: 1px solid white;
   background-color: #1e1e5a;
   color: white;
+}
+
+.result > div.selected {
+  border-color: black;
+  border-top: 1px solid white;
 }
 
 /* --- list --- */
@@ -138,6 +141,6 @@ body {
 
 /* --- list html --- */
 .listhtml {
-  border-left: 4px solid black;
+  border-left: 4px solid silver;
   border-radius: 0 0 5px 0;
 }

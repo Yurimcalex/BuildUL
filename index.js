@@ -27,4 +27,21 @@ document.addEventListener("DOMContentLoaded", () => {
   	outcomeContainer.append(result);
   	isListCreationEnabled = false;
   });
+
+  const menu = document.getElementById('menu');
+  menu.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.nodeName === 'A' && !target.classList.contains('selected')) {
+      const attr = target.dataset.link;
+      target.classList.add('selected');
+      document.getElementById(attr).classList.add('selected');
+      menu.querySelectorAll('a').forEach(link => {
+        if (link !== target) {
+          link.classList.remove('selected');
+          const attr = link.dataset.link;
+          document.getElementById(attr).classList.remove('selected');
+        }
+      });
+    }
+  });
 });
