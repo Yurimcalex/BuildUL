@@ -7,6 +7,7 @@ class List {
   _calсIndents() {
     this.data = this.str
       .split('\n')
+      .filter(line => !!line)
       .map(line => {
         let indent;
         for (let i = 0; i < line.length; i += 1) {
@@ -33,13 +34,22 @@ class List {
         currLevel++;
         maxIndent = indent;
         levels[indent] = currLevel;
+
       } else if (indent < maxIndent) {
         currLevel = levels[indent];
+        
         if (!currLevel) {
-          while( (indent = indent - 1) > -1 ) {
-            currLevel = levels[indent];
+          let key = indent;
+
+          while( (key = key - 1) > -1 ) {
+            currLevel = levels[key];
+            if (currLevel) break;
           }
+
+          if (indent < 0) indent = 0;
+          if (!currLevel) currLevel = 0;
         }
+
         maxIndent = indent;
       }
 
