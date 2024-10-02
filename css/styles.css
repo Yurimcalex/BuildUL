@@ -117,19 +117,21 @@ body {
   border-right: 4px solid silver;
   border-radius: 0 0 0 5px;
   font-size: 1.5em;
+  overflow: auto;
 }
 
 .list form {
-  width: 90%;
-  padding: 5px;
+  height: 90%;
+  padding: 15px;
   margin: 10px auto auto auto;
 }
 
 .list form textarea {
-  height: 350px;
-  width: 95%;
+  height: 100%;
+  width: 96%;    
   border: none;
-  font-size: 1.2em;
+  outline: 1px dashed #3B3BAF;
+  font-size: 0.9em;
   background-color: inherit;
   color: white;
 }
