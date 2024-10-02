@@ -3,20 +3,53 @@ class List {
     this.str = userStr;
   }
 
-  _getListDepth() {
-    this.depth = this.str
+
+  _calсIndents() {
+    this.data = this.str
       .split('\n')
       .map(line => {
-        const depth = line.lastIndexOf(' ') + 1;
+        let indent;
+        for (let i = 0; i < line.length; i += 1) {
+          if (line[i] !== ' ') {
+            indent = i;
+            break;
+          }
+        }
         return {
-          nesting: depth,
-          value: line.slice(depth)
+          indent,
+          value: line.slice(indent)
         }
       });
   }
 
+
+  _calcNestingDepth() {
+    const levels = {};
+    let maxIndent = -1;
+    let currLevel = -1;
+    
+    this.data = this.data.map(({ indent, value }) => {  
+      if (indent > maxIndent) {
+        currLevel++;
+        maxIndent = indent;
+        levels[indent] = currLevel;
+      } else if (indent < maxIndent) {
+        currLevel = levels[indent];
+        if (!currLevel) {
+          while( (indent = indent - 1) > -1 ) {
+            currLevel = levels[indent];
+          }
+        }
+        maxIndent = indent;
+      }
+
+      return { indent, value, nesting: currLevel };
+    });
+  }
+
+
   _createUL() {
-    const items = [...this.depth];
+    const items = [...this.data];
     const ul = document.createElement('UL');
     const lists = {};
     
@@ -45,7 +78,8 @@ class List {
   }
 
   render(container) {
-    this._getListDepth();
+    this._calсIndents();
+    this._calcNestingDepth();
     this._createUL();
     container.append(this.ul);
   }
