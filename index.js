@@ -15,18 +15,27 @@ document.addEventListener("DOMContentLoaded", () => {
      isListCreationEnabled = true;
   });
 
+
   showListBtn.addEventListener('click', () => {
   	if (!isListCreationEnabled) return;
   	const inputText = document.querySelector('form textarea').value;
-  	new List(inputText).render(outcomeContainer);
+  	const userList = new List(inputText).render(outcomeContainer);
   	const result = document.createElement('div');
   	result.textContent = outcomeContainer.innerHTML;
   	result.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
-  	result.style.marginLeft = '5px';
-  	result.style.marginRight = '5px';
+  	result.style.margin = '10px';
+    result.style.padding = '10px';
+    result.style.borderRadius = '5px';
+    result.style.cursor = 'pointer';
   	outcomeContainer.append(result);
   	isListCreationEnabled = false;
+
+    result.onclick = function (e) {
+      navigator.clipboard.writeText(userList.outerHTML);
+      alert(`List ${userList.outerHTML} copied to clipboard!`);
+    }
   });
+
 
   const menu = document.getElementById('menu');
   menu.addEventListener('click', (e) => {

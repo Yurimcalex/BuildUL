@@ -92,5 +92,6 @@ class List {
     this._calcNestingDepth();
     this._createUL();
     container.append(this.ul);
+    return this.ul;
   }
 }
