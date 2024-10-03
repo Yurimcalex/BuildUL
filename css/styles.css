@@ -108,6 +108,7 @@ body {
   border-top: 1px solid white;
   background-color: #1e1e5a;
   color: white;
+  overflow: auto;
 }
 
 .result > div.selected {
@@ -143,4 +144,8 @@ body {
 .listhtml {
   border-left: 4px solid silver;
   border-radius: 0 0 5px 0;
+}
+
+.listhtml > div {
+  overflow: auto;
 }
