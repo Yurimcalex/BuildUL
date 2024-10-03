@@ -11,9 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
   		'<form>' +
         '<textarea name="text"></textarea>'+
       '</form>';
-     document.querySelector('form textarea').focus();
-     createResetListBtn.children[0].textContent = 'Reset List';
-     isListCreationEnabled = true;
+    const inputArea = document.querySelector('form textarea');
+    inputArea.focus();
+    inputArea.oninput = function (e) {
+      showListBtn.click();  
+    };
+    createResetListBtn.children[0].textContent = 'Reset List';
+    isListCreationEnabled = true;
   });
 
 
