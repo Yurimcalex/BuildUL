@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   showListBtn.addEventListener('click', () => {
-  	if (!isListCreationEnabled) return;
+  	//if (!isListCreationEnabled) return;
+    outcomeContainer.innerHTML = '';
   	const inputText = document.querySelector('form textarea').value;
   	const userList = new List(inputText).render(outcomeContainer);
   	const result = document.createElement('div');
